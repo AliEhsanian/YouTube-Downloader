@@ -299,7 +299,7 @@ def main():
 
         custom_filename = st.text_input(
             "Custom Filename (optional)",
-            value="",
+            value=suggested_filename,
             placeholder=suggested_filename,
             help="Leave empty to use video title as filename"
         )
