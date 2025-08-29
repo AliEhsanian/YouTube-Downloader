@@ -25,7 +25,7 @@ A powerful and user-friendly YouTube video downloader with both command-line int
 ## Installation
 
 ### Prerequisites
-- Python 3.7 or higher
+- Python 3.10 or higher
 - FFmpeg (for format conversion)
 
 ### Quick Setup
@@ -186,6 +186,8 @@ Core dependencies (see `requirements.txt`):
 - If your video player can't play the downloaded MP4 file, try playing it with VLC media player, or re-encode for better compatibility using FFmpeg (this may take several minutes):
 ```bash
 # Replace paths with your actual file locations
+```
+```bash
 ffmpeg -i "downloads/myfile.mp4" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 192k "downloads/myfile_compatible.mp4"
 ```
 
