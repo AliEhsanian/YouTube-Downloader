@@ -183,9 +183,10 @@ Core dependencies (see `requirements.txt`):
 - Use `--force` flag to bypass URL validation
 - Enable `--silent` mode to reduce output for debugging
 - Check yt-dlp updates: `pip install -U yt-dlp`
-- If your video player can't play the `mp4` file, try playing it with `VLC` or you can run this command in trminal
+- If your video player can't play the downloaded MP4 file, try playing it with VLC media player, or re-encode for better compatibility using FFmpeg (this may take several minutes):
 ```bash
-ffmpeg -i "~/download/myfile.mp4" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 192k "~/download/myfile_compatible.mp4"
+# Replace paths with your actual file locations
+ffmpeg -i "downloads/myfile.mp4" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 192k "downloads/myfile_compatible.mp4"
 ```
 
 ## Contributing
