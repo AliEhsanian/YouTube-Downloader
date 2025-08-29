@@ -82,7 +82,7 @@ python src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./dow
 
 #### Start the GUI
 ```bash
-streamlit run src/streamlit_gui.py
+streamlit run src/app.py
 ```
 
 Then open your browser to `http://localhost:8501`
@@ -143,11 +143,11 @@ python src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./dow
 youtube-downloader/
 ├── src/
 │   ├── downloader.py          # Core downloader with CLI
-│   └── streamlit_gui.py       # Web interface
+│   └── app.py                 # Web interface
 ├── downloads/                 # Default output directory
 ├── requirements.txt           # Python dependencies
-├── pyproject.toml            # Project configuration
-└── README.md                 # This file
+├── pyproject.toml             # Project configuration
+└── README.md                  # This file
 ```
 
 ## Dependencies
@@ -186,6 +186,7 @@ Core dependencies (see `requirements.txt`):
 - If your video player can't play the `mp4` file, try playing it with `VLC` or you can run this command in trminal
 ```bash
 ffmpeg -i "~/download/myfile.mp4" -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 192k "~/download/myfile_compatible.mp4"
+```
 
 ## Contributing
 
