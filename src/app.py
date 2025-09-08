@@ -319,6 +319,19 @@ def main():
                 help="Attempt to download as playlist if available"
             )
 
+        # # # Playlist option
+        # if url and ('playlist' in url.lower() or 'list=' in url):
+        #     default_value = True
+        # else:
+        #     default_value = False
+
+        # is_playlist = st.checkbox(
+        #     "Download as playlist",
+        #     value=default_value,
+        #     key="playlist_checkbox",  # Optional: Ensures unique state tracking
+        #     help="Download all videos if it's a playlist; otherwise, attempt to treat as one if available"
+        # )
+
     # Download section
     st.markdown("---")
 

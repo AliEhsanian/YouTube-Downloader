@@ -139,6 +139,7 @@ class URLValidator:
                 'quiet': True,
                 'no_warnings': True,
                 'extract_flat': extract_flat,  # Fast extraction for GUI
+                #'noplaylist': False if is_playlist else True,  # Force single-video extraction
             }
 
             with yt_dlp.YoutubeDL(opts) as ydl:
@@ -251,7 +252,7 @@ class YouTubeDownloader:
 
         return format_preferences.get(quality, "best[ext=mp4]/best")
 
-    def _get_output_template(self, is_playlist: bool, video_info: Optional[Dict] = None) -> str:
+    def _get_output_template(self, is_playlist: bool = False, video_info: Optional[Dict] = None) -> str:
         """Generate output filename template."""
         base_dir = str(self.output_dir)
 
@@ -452,33 +453,24 @@ class UserInterface:
         # Auto-detect playlist URLs
         if 'playlist' in url.lower() or 'list=' in url:
             print("🎵 Playlist detected!")
-            while True:
-                choice = input("Download entire playlist? (y/n) [default: y]: ").strip().lower()
-                if not choice or choice in ['y', 'yes']:
-                    return True
-                elif choice in ['n', 'no']:
-                    return False
-                print("Please enter 'y' or 'n'")
+            choice = input("Download entire playlist? (y/n) [default: n]: ").strip().lower()
+            if choice in ['y', 'yes']:
+                return True
+            return False
 
         # Check if video_info indicates a playlist
         if video_info and video_info.get('_type') == 'playlist':
             print("🎵 This URL contains a playlist!")
-            while True:
-                choice = input("Download entire playlist? (y/n) [default: y]: ").strip().lower()
-                if not choice or choice in ['y', 'yes']:
-                    return True
-                elif choice in ['n', 'no']:
-                    return False
-                print("Please enter 'y' or 'n'")
+            choice = input("Download entire playlist? (y/n) [default: n]: ").strip().lower()
+            if choice in ['y', 'yes']:
+                return True
+            return False
 
         # For non-playlist URLs, ask if they want to check for playlist
-        while True:
-            choice = input("\nDownload as playlist? (y/n) [default: n]: ").strip().lower()
-            if not choice or choice in ['n', 'no']:
-                return False
-            elif choice in ['y', 'yes']:
-                return True
-            print("Please enter 'y' or 'n'")
+        choice = input("\nDownload as playlist? (y/n) [default: n]: ").strip().lower()
+        if choice in ['y', 'yes']:
+            return True
+        return False
 
 
 def main():
