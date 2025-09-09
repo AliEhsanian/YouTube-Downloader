@@ -55,15 +55,27 @@ pip install -r requirements.txt
 
 #### Interactive Mode
 ```bash
+uv run src/downloader.py
+```
+- or
+```bash
 python src/downloader.py
 ```
 
 #### Direct Download
 ```bash
+uv run src/downloader.py "https://youtube.com/watch?v=VIDEO_ID"
+```
+- or
+```bash
 python src/downloader.py "https://youtube.com/watch?v=VIDEO_ID"
 ```
 
 #### Advanced Options
+```bash
+uv run src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./downloads
+```
+- or
 ```bash
 python src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./downloads
 ```
@@ -81,6 +93,10 @@ python src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./dow
 ### Web Interface
 
 #### Start the GUI
+```bash
+uv run streamlit run src/app.py
+```
+- or
 ```bash
 streamlit run src/app.py
 ```
