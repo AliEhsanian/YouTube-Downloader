@@ -57,7 +57,7 @@ pip install -r requirements.txt
 ```bash
 uv run src/downloader.py
 ```
-- or
+Or
 ```bash
 python src/downloader.py
 ```
@@ -66,7 +66,7 @@ python src/downloader.py
 ```bash
 uv run src/downloader.py "https://youtube.com/watch?v=VIDEO_ID"
 ```
-- or
+Or
 ```bash
 python src/downloader.py "https://youtube.com/watch?v=VIDEO_ID"
 ```
@@ -75,7 +75,7 @@ python src/downloader.py "https://youtube.com/watch?v=VIDEO_ID"
 ```bash
 uv run src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./downloads
 ```
-- or
+Or
 ```bash
 python src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./downloads
 ```
@@ -96,7 +96,7 @@ python src/downloader.py "VIDEO_URL" --quality 1080p --format mp4 --output ./dow
 ```bash
 uv run streamlit run src/app.py
 ```
-- or
+Or
 ```bash
 streamlit run src/app.py
 ```
