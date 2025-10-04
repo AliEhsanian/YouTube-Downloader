@@ -32,14 +32,14 @@ A powerful and user-friendly YouTube video downloader with both command-line int
 
 #### Using uv (recommended)
 ```bash
-git clone https://github.com/username/youtube-downloader.git
+git clone https://github.com/AliEhsanian/youtube-downloader.git
 cd youtube-downloader
 uv install
 ```
 
 #### Using pip
 ```bash
-git clone https://github.com/username/youtube-downloader.git
+git clone https://github.com/AliEhsanian/youtube-downloader.git
 cd youtube-downloader
 pip install -r requirements.txt
 ```
